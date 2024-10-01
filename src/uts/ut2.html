@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT02 – Data Preprocessing and ML Algorithm Basics</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top transparent">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="../index.html">Ionas Josponis</a>
+            </div> <!-- .navbar-header -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div> <!-- .navbar-collapse -->
+        </div> <!-- .container -->
+    </nav>
+    <br>
+    <br>
+    <main data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+
+        <!-- <div class="container mt-5">
+            <h3 class="mb-5 text-center">Take-home exercises</h3>
+        </div> -->
+        <div class="container mt-5">
+            <h3 class="mb-5 text-center">Take-home exercises</h3>
+
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="intro-paragraph">
+                        <h4>Practical Assignment 1</h4>
+                        <p><strong>Exercise 1</strong><br>
+                            <strong>Handling Missing Values:</strong><br>
+                            I noticed that there were many attributes with missing data. First, I used the “Select
+                            Attributes” tool to hide/remove the attributes that were not important for this tutorial.
+                            Then, with the “Replace Missing Attributes” tool, I replaced the missing values with the
+                            median. Finally, with “Filter Examples”, we eliminated all the rows that still had missing
+                            columns.
+                            <br><br>
+                            <strong>Normalization and Outlier Detection:</strong><br>
+                            I started by importing the dataset, then I removed some attributes that were not important.
+                            After that, we normalized the data to be able to apply distance-based algorithms.
+                            We then connected the operator to detect outliers, linked it, and added the operator “Filter
+                            Examples,” where we set the outlier values to false.
+                        </p>
+
+                        <p><strong>Exercise 2</strong><br>
+                            The first problem I encountered was that after downloading the dataset, it was not
+                            downloaded as a CSV but as a .data file.
+                            This was the first time I downloaded a dataset in this format, so I opened it in Excel to
+                            convert it to CSV.
+                            I noticed that the attribute names were missing, so I looked them up in the description and
+                            added them. Finally, I exported it as a CSV and opened it in RapidMiner.
+                            <br><br>
+                            <strong>Problem:</strong><br>
+                            Determine the origin of the wine based on the provided data.
+                            <br><br>
+                            <strong>Attributes:</strong><br>
+                        <ul>
+                            <li><strong>Wine class:</strong> Type of wine (1, 2, or 3), corresponding to the region of
+                                origin.</li>
+                            <li><strong>Alcohol:</strong> Percentage of alcohol in the wine.</li>
+                            <li><strong>Malic acid:</strong> Chemical compound contributing to the wine’s acidity.</li>
+                            <li><strong>Ash:</strong> Mineral residue remaining after burning the wine.</li>
+                            <li><strong>Alkalinity of ash:</strong> Measure of the alkalinity (ability to neutralize
+                                acids) in the ash.</li>
+                            <li><strong>Magnesium:</strong> Magnesium content in the wine, in parts per million (ppm).
+                            </li>
+                            <li><strong>Total phenols:</strong> Total amount of phenols, compounds affecting the flavor
+                                and color of the wine.</li>
+                            <li><strong>Flavanoids:</strong> A subgroup of phenols, important for the flavor and color
+                                of the wine.</li>
+                            <li><strong>Nonflavanoid phenols:</strong> Phenols that do not belong to the flavonoid
+                                group.</li>
+                            <li><strong>Proanthocyanins:</strong> Tannins present in wine, affecting the flavor and
+                                color.</li>
+                            <li><strong>Color intensity:</strong> The intensity of the wine’s color.</li>
+                            <li><strong>Hue:</strong> Tone of the wine’s color.</li>
+                            <li><strong>OD280/OD315 of diluted wines:</strong> Absorbance of diluted wine at 280 nm and
+                                315 nm, a measure related to the phenol content.</li>
+                            <li><strong>Proline:</strong> An amino acid that is a quality marker in wine.</li>
+                        </ul>
+                        <br>
+                        RapidMiner shows in the statistics section that there are no missing values. It is also observed
+                        that there are no outliers, as there is no evidence in the bar charts indicating their presence.
+                        <br><br>
+                        <strong>Confusion Matrix Results:</strong><br>
+                        After following the steps, I obtained the confusion matrix for both cases:<br>
+                        The confusion matrix is a table showing the performance of a classification model by comparing
+                        the predictions with the true labels, detailing true positives, false positives, true negatives,
+                        and false negatives for each class.
+                        <br><br>
+                        <strong>Class recall:</strong> It measures the proportion of positive instances correctly
+                        identified by the model, calculated as true positives divided by the sum of true positives and
+                        false negatives.
+                        </p>
+
+                        <p><strong>For the unnormalized/standardized dataset:</strong><br>
+                            <img src="../../Assets/ut2_images/ut3_pd1_ej2.png" class="img-fluid"
+                                style="width: 90%;"><br>
+
+                            In general, the model had an accuracy of 96.00%<br>
+                            For class 1 (pred1), we see that Naive Bayes had 100% accuracy, meaning it always predicted
+                            that the wine belonged to class 1 (vineyard 1) based on its characteristics.<br>
+                            For class 2 (pred2), the model achieved 92.45% accuracy and confused class 2 with class 1 on
+                            four occasions.<br>
+                            For class 3, the model achieved 97.14% accuracy, misclassifying class 3 as class 2 once.
+                        </p>
+
+                        <p><strong>For the normalized and standardized dataset:</strong><br>
+                            <img src="../../Assets/ut2_images/ut3_pd1_ej2_v2.png" class="img-fluid"
+                                style="width: 90%;"><br>
+                            The model, after being normalized and standardized, achieved an accuracy of 98.11%. It only
+                            misclassified class 2 as class 1 on one occasion.
+                        </p>
+
+                        <p><strong>Conclusion:</strong><br>
+                            Preprocessing using normalization and standardization improved the model’s accuracy from
+                            96.00% to 98.11%. The precision and recall also increased, especially in class 1 and class
+                            2, indicating that the model’s classification ability improved, reducing errors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="intro-paragraph">
+                        <h4>Practical Assignment 2</h4>
+                        <p><strong>Modeling:</strong><br>
+                            I loaded the dataset without missing values using the subprocess from the "Handling Missing
+                            Values" tutorial.
+                            Then I used the following operators:
+                        <ul>
+                            <li><strong>Decision Tree:</strong> Classifies examples by splitting data into nodes based
+                                on attributes, creating a tree structure that helps predict outcomes based on
+                                hierarchical rules.</li>
+                            <li><strong>Naive Bayes:</strong> Calculates the probability of each class assuming
+                                independence between attributes, used to classify examples.</li>
+                            <li><strong>Rule Induction:</strong> Extracts rules from data to build interpretable and
+                                accurate models.</li>
+                        </ul>
+                        The most interesting part of this tutorial was Rule Induction, as we have already seen Decision
+                        Tree in other assignments.
+                        </p>
+                        <img src="../../Assets/ut2_images/ut3_pd1_ej3_rule_model.png" class="img-fluid"
+                            style="width: 90%;"><br>
+
+                        <p><strong>Scoring:</strong><br>
+                            I loaded the dataset without missing values using the subprocess from the "Handling Missing
+                            Values" tutorial. After following the tutorial steps, an error occurred that prevented me
+                            from executing the process:
+                            <em>"The input ExampleSet does not match the training. Missing attribute: 'Port of
+                                Embarkation'".</em> The solution was to exclude it from the subset of attributes
+                            selected with the "Select Attributes" operator.<br>
+                            The output shows a table that provides the survival prediction, with two tables on the right
+                            indicating the confidence percentage for survival ("yes") or death ("no").
+                        </p>
+                        <img src="../../Assets/ut2_images/ut3_pd1_ej3_survival_probability.png" class="img-fluid"
+                            style="width: 0%;"><br>
+                        <p><strong>Test splits and validation:</strong><br>
+                            I loaded the dataset without missing values using the subprocess from the "Handling Missing
+                            Values" tutorial. After following the tutorial steps, we arrived at the following confusion
+                            matrix.<br>
+                            <img src="../../Assets/ut2_images/ut3_pd1_ej3_confuse_matrix.png" class="img-fluid"
+                                style="width: 90%;"><br>
+                            The model predicted survivors with 75% accuracy and deceased individuals with 77.17%
+                            accuracy.
+                        </p>
+
+                        <p><strong>Cross validation:</strong><br>
+                            I loaded the previously prepared dataset. After following the steps, using the
+                            cross-validation operator, I was able to split the model into two subsets: the Training
+                            subset trains the data with a decision tree, and the Testing subset validates it using an
+                            Apply Model operator and a Performance operator.
+                        </p>
+
+                        <p><strong>Visual model comparison:</strong><br>
+                            The Compare ROCs operator allows the comparison of multiple classification models'
+                            performance. In this tutorial, we compared Decision Tree, Naive Bayes, and Rule
+                            Induction.<br>
+                            <img src="../../Assets/ut2_images/ut3_pd1_ej3_ROC.png" class="img-fluid"
+                                style="width: 70%;"><br>
+                            The graph shows each model's ability to distinguish between classes. If all curves tend
+                            towards the top-left corner, the models are more effective than random selection.<br>
+                            Naive Bayes has the curve farthest from the top-left corner, indicating the worst
+                            performance of the three models for this dataset.<br>
+                            The ROC allows us to determine which model has better predictive ability, but results may
+                            vary with different datasets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="intro-paragraph">
+                        <h4>Practical Assignment 3</h4>
+                        <p>This task demonstrates that we can perform in Python what we do in RapidMiner. The code was
+                            modified in two functions:
+                            <strong>column_means</strong> and <strong>normalize_dataset</strong>.<br>
+                            A condition was added to convert String data types to float using the
+                            <strong>str_column_to_float</strong> method to avoid errors.
+                        </p>
+                        <p><b>main.py</b></p>
+                            <img src="../../Assets/ut2_images/ut3_pd4_mainpy.png" class="img-fluid"
+                                style="width: 40%;"><br>
+                        <br>
+                        <p><b>utils.py</b></p>
+                            <img src="../../Assets/ut2_images/ut3_pd4_utilspy.png" class="img-fluid"
+                                style="width: 40%;"><br>
+                                <img src="../../Assets/ut2_images/ut3_pd4_utilspy_v2.png" class="img-fluid"
+                                style="width: 40%;"><br>
+                        
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="intro-paragraph">
+                        <h4>Practical Assignment 4</h4>
+                        <p>
+                            <strong>Exercise 1:</strong> Using Kaggle optimizes models by normalizing data, improving accuracy. It also gives us more control over data preprocessing. RapidMiner offers a more visual workflow.
+                            <br><br>
+                            <strong>Exercise 2:</strong> When running the script, the console displays the results:
+                            <br><br>
+                            <em>Part 1:</em><br>
+                            P(S=true | G=female, C=1): 0.9680851063829787<br>
+                            P(S=true | G=female, C=2): 0.9210526315789473<br>
+                            P(S=true | G=female, C=3): 0.5<br>
+                            P(S=true | G=male, C=1): 0.36885245901639346<br>
+                            P(S=true | G=male, C=2): 0.1574074074074074<br>
+                            P(S=true | G=male, C=3): 0.13544668587896252
+                            <br><br>
+                            <em>Part 2:</em><br>
+                            P(S=true | A<=10, C=3): 0.4318181818181818
+                            <br><br>
+                            It is noticeable that there is a large difference between males and females. Women are much more likely to survive than men. The probability of survival for a child 10 years or younger in third class is 43%.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="text-center text-inverse navbar-inverse">
+            <div class="container">
+              <div class="row">
+                <div class="footer-col col-md-4" id="contact">
+                    <h3>Location</h3>
+                        <p>Montevideo, Uruguay</p>
+                </div> <!-- .footer-col -->
+                <div class="footer-col col-md-4">
+                    <h3>Connect</h3>
+                    <ul class="list-inline">
+                      <li>
+                           <a class="medium" href="https://github.com/Ionasjospo" target="newwindow"><span class="fui-github"></span></a>
+                      </li>
+                      <li>
+                          <a class="medium" href="https://www.linkedin.com/in/ionas-josponis/" target="newwindow"><span class="fui-linkedin"></span></a>
+                      </li>
+                    </ul>
+                </div> <!-- .footer-col -->
+                <div class="footer-col col-md-4">
+                    <h3>Hire Me</h3>
+                    <p>I'm available for workshops</p>
+                </div> <!-- .footer-col -->
+              </div> <!-- .row -->
+            </div> <!-- .container --> 
+          </div> <!--  -->
+        </div>
+
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT03 - Linear Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top transparent">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="../index.html">Ionas Josponis</a>
+            </div> <!-- .navbar-header -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div> <!-- .navbar-collapse -->
+        </div> <!-- .container -->
+    </nav>
+    <br>
+    <br>
+    <main data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center">Linear Algorithms</h2>
+                <hr>
+                <p class=" intro-paragraph">
+                        In this unit, we dive into linear algorithms, which form the foundation for many machine
+                        learning
+                        techniques.
+                        These algorithms assume that relationships between input variables and the output are linear in
+                        nature.
+                        They are crucial for understanding more complex models and are often used for regression and
+                        classification problems.
+                        Key topics include gradient descent and linear regression, logistic regression, and Linear
+                        discriminant analysis.
+                        </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 algorithm-box">
+                    <h3>Gradient Descent and Linear Regression</h3>
+                    <p class="intro-paragraph">
+                        <!-- https://www.geeksforgeeks.org/gradient-descent-in-linear-regression/ -->
+                        <b>What is Gradient Descent?</b><br>
+
+                        Gradient Descent is an iterative optimization algorithm that tries to find the optimum value
+                        (Minimum/Maximum) of an objective function.
+                        It is one of the most used optimization techniques in machine learning projects for updating the
+                        parameters of a model in order to minimize a cost function.
+                        The main aim of gradient descent is to find the best parameters of a model which gives the
+                        highest accuracy on training as well as testing datasets.
+                        <br>
+                        The gradient is a vector that points in the direction of the steepest increase of the function
+                        at a specific point. Moving in the opposite direction of the gradient allows the algorithm to
+                        gradually descend towards lower values of the function, and eventually reaching to the minimum
+                        of the function.
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <!-- https://poissonisfish.com/2023/04/11/gradient-descent/ -->
+                        <img src="../../Assets/ut3_images/Gradient_descent.jpg" class="img-fluid" style="width: 40%;">
+                        <br>
+                        <br>
+                    </div>
+                    <div>
+
+                    </div>
+                    <p class="intro-paragraph">
+                        <!-- https://www.geeksforgeeks.org/ml-linear-regression/ -->
+                        <b>What is Linear Regression?</b><br>
+                        Linear regression is a type of supervised machine learning algorithm that computes the linear
+                        relationship between the dependent variable and one or more independent features by fitting a
+                        linear equation to observed data.
+                        When there is only one independent feature, it is known as Simple Linear Regression, and when
+                        there are more than one feature, it is known as Multiple Linear Regression.
+                        Similarly, when there is only one dependent variable, it is considered Univariate Linear
+                        Regression, while when there are more than one dependent variables, it is known as Multivariate
+                        Regression.
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <!-- https://www.linkedin.com/pulse/understanding-linear-regression-basics-divyesh-sonar-snv4c -->
+                        <img src="../../Assets/ut3_images/Linear_regressions.jpg" class="img-fluid" style="width: 70%;">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="algorithm-box">
+                    <h3>Logistic Regression</h3>
+                    <p class="intro-paragraph col-xs-12 col-md-6">
+                        <!-- https://www.sciencedirect.com/topics/computer-science/sigmoid-function -->
+                        <b>Sigmoid function</b><br>
+                        First, we need to know about the sigmoid function.
+                        It is one of the most commonly used activation functions.
+                        It is a mathematical function having an S-shaped curve (sigmoid curve). The sigmoid function is
+                        defined as:
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center col-xs-12 col-md-6">
+                        <!-- https://www.codecademy.com/resources/docs/ai/neural-networks/sigmoid-activation-function -->
+                        <img src="../../Assets/ut3_images/sigmoid-function.png" class="img-fluid" style="width: 60%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row">
+                <div class="algorithm-box">
+                    <p class="intro-paragraph col-xs-12 col-md-6">
+                        <!-- https://www.geeksforgeeks.org/understanding-logistic-regression/ -->
+                        <b>What is Logistic Regression?</b><br>
+                        Logistic regression is used for binary classification where we use sigmoid function, that takes
+                        input as independent variables and produces a probability value between 0 and 1.
+                        For example, we have two classes Class 0 and Class 1 if the value of the logistic function for
+                        an input is greater than 0.5 (threshold value) then it belongs to Class 1 otherwise it belongs
+                        to Class 0.
+                        <br>It is referred to as regression because it is the extension of linear regression but is
+                        mainly used for classification problems.
+                    </p>
+
+                    <div class="d-flex justify-content-center align-items-center col-xs-12 col-md-6">
+                        <!-- https://www.freecodecamp.org/news/linear-regression-vs-logistic-regression/ -->
+                        <img src="../../Assets/ut3_images/logistic_regression.png" class="img-fluid"
+                            style="width: 60%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="text-center text-inverse navbar-inverse">
+            <div class="container">
+              <div class="row">
+                <div class="footer-col col-md-4" id="contact">
+                    <h3>Location</h3>
+                        <p>Montevideo, Uruguay</p>
+                </div> <!-- .footer-col -->
+                <div class="footer-col col-md-4">
+                    <h3>Connect</h3>
+                    <ul class="list-inline">
+                      <li>
+                           <a class="medium" href="https://github.com/Ionasjospo" target="newwindow"><span class="fui-github"></span></a>
+                      </li>
+                      <li>
+                          <a class="medium" href="https://www.linkedin.com/in/ionas-josponis/" target="newwindow"><span class="fui-linkedin"></span></a>
+                      </li>
+                    </ul>
+                </div> <!-- .footer-col -->
+                <div class="footer-col col-md-4">
+                    <h3>Hire Me</h3>
+                    <p>I'm available for workshops</p>
+                </div> <!-- .footer-col -->
+              </div> <!-- .row -->
+            </div> <!-- .container --> 
+          </div> <!--  -->
+        </div>
+    </main>
+</body>
+
+</html>
+
+
+
+
+<!-- https://codepen.io/eddyerburgh/pen/oxwXjx -->
