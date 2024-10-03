@@ -5,293 +5,401 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UT02 – Data Preprocessing and ML Algorithm Basics</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <!-- Bootstrap 5 CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top transparent">
+    <style>
+        .navbar-custom {
+            background-color: #34495e;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                </button>
-                <a class="navbar-brand" href="../index.html">Ionas Josponis</a>
-            </div> <!-- .navbar-header -->
+            <!-- Brand -->
+            <a class="navbar-brand" href="../index.html">Ionas Josponis</a>
+
+            <!-- Toggler/collapsible Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html" style="color: white;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html" style="color: white;">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" style="color: white;">Contact</a>
+                    </li>
                 </ul>
             </div> <!-- .navbar-collapse -->
         </div> <!-- .container -->
     </nav>
-    <br>
-    <br>
+
     <main data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
-
-        <!-- <div class="container mt-5">
-            <h3 class="mb-5 text-center">Take-home exercises</h3>
-        </div> -->
-        <div class="container mt-5">
-            <h3 class="mb-5 text-center">Take-home exercises</h3>
-
-            <div class="row mb-5">
+        <div class="container">
+            <div class="row">
                 <div class="col-md-12">
-                    <div class="intro-paragraph">
-                        <h4>Practical Assignment 1</h4>
-                        <p><strong>Exercise 1</strong><br>
-                            <strong>Handling Missing Values:</strong><br>
-                            I noticed that there were many attributes with missing data. First, I used the “Select
-                            Attributes” tool to hide/remove the attributes that were not important for this tutorial.
-                            Then, with the “Replace Missing Attributes” tool, I replaced the missing values with the
-                            median. Finally, with “Filter Examples”, we eliminated all the rows that still had missing
-                            columns.
-                            <br><br>
-                            <strong>Normalization and Outlier Detection:</strong><br>
-                            I started by importing the dataset, then I removed some attributes that were not important.
-                            After that, we normalized the data to be able to apply distance-based algorithms.
-                            We then connected the operator to detect outliers, linked it, and added the operator “Filter
-                            Examples,” where we set the outlier values to false.
-                        </p>
-
-                        <p><strong>Exercise 2</strong><br>
-                            The first problem I encountered was that after downloading the dataset, it was not
-                            downloaded as a CSV but as a .data file.
-                            This was the first time I downloaded a dataset in this format, so I opened it in Excel to
-                            convert it to CSV.
-                            I noticed that the attribute names were missing, so I looked them up in the description and
-                            added them. Finally, I exported it as a CSV and opened it in RapidMiner.
-                            <br><br>
-                            <strong>Problem:</strong><br>
-                            Determine the origin of the wine based on the provided data.
-                            <br><br>
-                            <strong>Attributes:</strong><br>
-                        <ul>
-                            <li><strong>Wine class:</strong> Type of wine (1, 2, or 3), corresponding to the region of
-                                origin.</li>
-                            <li><strong>Alcohol:</strong> Percentage of alcohol in the wine.</li>
-                            <li><strong>Malic acid:</strong> Chemical compound contributing to the wine’s acidity.</li>
-                            <li><strong>Ash:</strong> Mineral residue remaining after burning the wine.</li>
-                            <li><strong>Alkalinity of ash:</strong> Measure of the alkalinity (ability to neutralize
-                                acids) in the ash.</li>
-                            <li><strong>Magnesium:</strong> Magnesium content in the wine, in parts per million (ppm).
-                            </li>
-                            <li><strong>Total phenols:</strong> Total amount of phenols, compounds affecting the flavor
-                                and color of the wine.</li>
-                            <li><strong>Flavanoids:</strong> A subgroup of phenols, important for the flavor and color
-                                of the wine.</li>
-                            <li><strong>Nonflavanoid phenols:</strong> Phenols that do not belong to the flavonoid
-                                group.</li>
-                            <li><strong>Proanthocyanins:</strong> Tannins present in wine, affecting the flavor and
-                                color.</li>
-                            <li><strong>Color intensity:</strong> The intensity of the wine’s color.</li>
-                            <li><strong>Hue:</strong> Tone of the wine’s color.</li>
-                            <li><strong>OD280/OD315 of diluted wines:</strong> Absorbance of diluted wine at 280 nm and
-                                315 nm, a measure related to the phenol content.</li>
-                            <li><strong>Proline:</strong> An amino acid that is a quality marker in wine.</li>
-                        </ul>
-                        <br>
-                        RapidMiner shows in the statistics section that there are no missing values. It is also observed
-                        that there are no outliers, as there is no evidence in the bar charts indicating their presence.
-                        <br><br>
-                        <strong>Confusion Matrix Results:</strong><br>
-                        After following the steps, I obtained the confusion matrix for both cases:<br>
-                        The confusion matrix is a table showing the performance of a classification model by comparing
-                        the predictions with the true labels, detailing true positives, false positives, true negatives,
-                        and false negatives for each class.
-                        <br><br>
-                        <strong>Class recall:</strong> It measures the proportion of positive instances correctly
-                        identified by the model, calculated as true positives divided by the sum of true positives and
-                        false negatives.
-                        </p>
-
-                        <p><strong>For the unnormalized/standardized dataset:</strong><br>
-                            <img src="../../Assets/ut2_images/ut3_pd1_ej2.png" class="img-fluid"
-                                style="width: 90%;"><br>
-
-                            In general, the model had an accuracy of 96.00%<br>
-                            For class 1 (pred1), we see that Naive Bayes had 100% accuracy, meaning it always predicted
-                            that the wine belonged to class 1 (vineyard 1) based on its characteristics.<br>
-                            For class 2 (pred2), the model achieved 92.45% accuracy and confused class 2 with class 1 on
-                            four occasions.<br>
-                            For class 3, the model achieved 97.14% accuracy, misclassifying class 3 as class 2 once.
-                        </p>
-
-                        <p><strong>For the normalized and standardized dataset:</strong><br>
-                            <img src="../../Assets/ut2_images/ut3_pd1_ej2_v2.png" class="img-fluid"
-                                style="width: 90%;"><br>
-                            The model, after being normalized and standardized, achieved an accuracy of 98.11%. It only
-                            misclassified class 2 as class 1 on one occasion.
-                        </p>
-
-                        <p><strong>Conclusion:</strong><br>
-                            Preprocessing using normalization and standardization improved the model’s accuracy from
-                            96.00% to 98.11%. The precision and recall also increased, especially in class 1 and class
-                            2, indicating that the model’s classification ability improved, reducing errors.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row mb-5">
-                <div class="col-md-12">
-                    <div class="intro-paragraph">
-                        <h4>Practical Assignment 2</h4>
-                        <p><strong>Modeling:</strong><br>
-                            I loaded the dataset without missing values using the subprocess from the "Handling Missing
-                            Values" tutorial.
-                            Then I used the following operators:
-                        <ul>
-                            <li><strong>Decision Tree:</strong> Classifies examples by splitting data into nodes based
-                                on attributes, creating a tree structure that helps predict outcomes based on
-                                hierarchical rules.</li>
-                            <li><strong>Naive Bayes:</strong> Calculates the probability of each class assuming
-                                independence between attributes, used to classify examples.</li>
-                            <li><strong>Rule Induction:</strong> Extracts rules from data to build interpretable and
-                                accurate models.</li>
-                        </ul>
-                        The most interesting part of this tutorial was Rule Induction, as we have already seen Decision
-                        Tree in other assignments.
-                        </p>
-                        <img src="../../Assets/ut2_images/ut3_pd1_ej3_rule_model.png" class="img-fluid"
-                            style="width: 90%;"><br>
-
-                        <p><strong>Scoring:</strong><br>
-                            I loaded the dataset without missing values using the subprocess from the "Handling Missing
-                            Values" tutorial. After following the tutorial steps, an error occurred that prevented me
-                            from executing the process:
-                            <em>"The input ExampleSet does not match the training. Missing attribute: 'Port of
-                                Embarkation'".</em> The solution was to exclude it from the subset of attributes
-                            selected with the "Select Attributes" operator.<br>
-                            The output shows a table that provides the survival prediction, with two tables on the right
-                            indicating the confidence percentage for survival ("yes") or death ("no").
-                        </p>
-                        <img src="../../Assets/ut2_images/ut3_pd1_ej3_survival_probability.png" class="img-fluid"
-                            style="width: 0%;"><br>
-                        <p><strong>Test splits and validation:</strong><br>
-                            I loaded the dataset without missing values using the subprocess from the "Handling Missing
-                            Values" tutorial. After following the tutorial steps, we arrived at the following confusion
-                            matrix.<br>
-                            <img src="../../Assets/ut2_images/ut3_pd1_ej3_confuse_matrix.png" class="img-fluid"
-                                style="width: 90%;"><br>
-                            The model predicted survivors with 75% accuracy and deceased individuals with 77.17%
-                            accuracy.
-                        </p>
-
-                        <p><strong>Cross validation:</strong><br>
-                            I loaded the previously prepared dataset. After following the steps, using the
-                            cross-validation operator, I was able to split the model into two subsets: the Training
-                            subset trains the data with a decision tree, and the Testing subset validates it using an
-                            Apply Model operator and a Performance operator.
-                        </p>
-
-                        <p><strong>Visual model comparison:</strong><br>
-                            The Compare ROCs operator allows the comparison of multiple classification models'
-                            performance. In this tutorial, we compared Decision Tree, Naive Bayes, and Rule
-                            Induction.<br>
-                            <img src="../../Assets/ut2_images/ut3_pd1_ej3_ROC.png" class="img-fluid"
-                                style="width: 70%;"><br>
-                            The graph shows each model's ability to distinguish between classes. If all curves tend
-                            towards the top-left corner, the models are more effective than random selection.<br>
-                            Naive Bayes has the curve farthest from the top-left corner, indicating the worst
-                            performance of the three models for this dataset.<br>
-                            The ROC allows us to determine which model has better predictive ability, but results may
-                            vary with different datasets.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-md-12">
-                    <div class="intro-paragraph">
-                        <h4>Practical Assignment 3</h4>
-                        <p>This task demonstrates that we can perform in Python what we do in RapidMiner. The code was
-                            modified in two functions:
-                            <strong>column_means</strong> and <strong>normalize_dataset</strong>.<br>
-                            A condition was added to convert String data types to float using the
-                            <strong>str_column_to_float</strong> method to avoid errors.
-                        </p>
-                        <p><b>main.py</b></p>
-                            <img src="../../Assets/ut2_images/ut3_pd4_mainpy.png" class="img-fluid"
-                                style="width: 40%;"><br>
-                        <br>
-                        <p><b>utils.py</b></p>
-                            <img src="../../Assets/ut2_images/ut3_pd4_utilspy.png" class="img-fluid"
-                                style="width: 40%;"><br>
-                                <img src="../../Assets/ut2_images/ut3_pd4_utilspy_v2.png" class="img-fluid"
-                                style="width: 40%;"><br>
-                        
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-md-12">
-                    <div class="intro-paragraph">
-                        <h4>Practical Assignment 4</h4>
-                        <p>
-                            <strong>Exercise 1:</strong> Using Kaggle optimizes models by normalizing data, improving accuracy. It also gives us more control over data preprocessing. RapidMiner offers a more visual workflow.
-                            <br><br>
-                            <strong>Exercise 2:</strong> When running the script, the console displays the results:
-                            <br><br>
-                            <em>Part 1:</em><br>
-                            P(S=true | G=female, C=1): 0.9680851063829787<br>
-                            P(S=true | G=female, C=2): 0.9210526315789473<br>
-                            P(S=true | G=female, C=3): 0.5<br>
-                            P(S=true | G=male, C=1): 0.36885245901639346<br>
-                            P(S=true | G=male, C=2): 0.1574074074074074<br>
-                            P(S=true | G=male, C=3): 0.13544668587896252
-                            <br><br>
-                            <em>Part 2:</em><br>
-                            P(S=true | A<=10, C=3): 0.4318181818181818
-                            <br><br>
-                            It is noticeable that there is a large difference between males and females. Women are much more likely to survive than men. The probability of survival for a child 10 years or younger in third class is 43%.
-                        </p>
-                    </div>
+                    <h3 class="text-center">Data Preprocessing and ML Algorithm Basics</h3>
+                    <hr>
+                    <p class="intro-paragraph">
+                        In Unit 2, we delve into the foundational concepts of machine learning, exploring key
+                        terminology and the statistical and computational perspectives of data, models, and algorithms.
+                        This includes understanding the software that embeds ML and the core principles underlying ML
+                        algorithms. We differentiate between parametric and non-parametric algorithms and examine
+                        supervised, unsupervised, and semi-supervised learning approaches. Concepts such as bias,
+                        variance, and the trade-off between them are crucial, along with discussions on overfitting and
+                        underfitting. Data preprocessing plays a central role, including descriptive statistics,
+                        normalization, discretization, and handling outliers and missing values.
+                        Tools like RapidMiner provide practical insights into working with datasets and ML functions.
+                    </p>
                 </div>
             </div>
         </div>
 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Machine learning</h3>
+                    <p class="intro-paragaph">
+                        <!-- https://www.ibm.com/topics/machine-learning -->
+                        <b>What is ML?</b><br>
+                        Machine learning is a branch of artificial intelligence and computer science that focuses on the
+                        using data and algorithms to enable AI to imitate the way that humans learn, gradually improving
+                        its accuracy.
+                    </p>
+
+                    <p class="intro-paragaph">
+                        <!-- https://www.ibm.com/topics/machine-learning -->
+                        <b>How does machine learning work?</b><br>
+                        The learning system of a machine learning algorithm into three main parts:<br>
+                        <b>A Decision Process:</b> In general, machine learning algorithms are used to make a prediction
+                        or
+                        classification. Based on some input data, which can be labeled or unlabeled, your algorithm will
+                        produce an estimate about a pattern in the data.<br>
+                        <b>An Error Function:</b> An error function evaluates the prediction of the model. If there are
+                        known
+                        examples, an error function can make a comparison to assess the accuracy of the model.<br>
+                        <b>A Model Optimization Process:</b> If the model can fit better to the data points in the
+                        training
+                        set, then weights are adjusted to reduce the discrepancy between the known example and the model
+                        estimate. The algorithm will repeat this iterative “evaluate and optimize” process, updating
+                        weights autonomously until a threshold of accuracy has been met.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <!-- https://marufsazed.medium.com/the-difference-between-mathematical-computational-and-applied-statistics-f4afaf76b76d -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Mathematical Statistics vs Computer Statistics</h3>
+                    <p class="intro-paragaph">
+                        <b>Mathematical Statistics</b><br>
+                        As the name suggests, mathematical statistics focuses on the application of mathematical
+                        principles to understand the theoretical properties of statistical techniques.
+                        By analyzing these properties, we can assess the strengths and weaknesses of different methods,
+                        which is crucial when selecting the appropriate technique for a specific practical problem.
+                        Moreover, mathematical statistics provides a solid foundation for the development of new
+                        statistical methods.
+                    </p>
+
+                    <p class="intro-paragaph">
+                        <b>Computer Statistics</b><br>
+                        Computational statistics addresses problems that mathematical statistics alone cannot solve,
+                        particularly when closed-form solutions are unavailable or too complex to derive.
+                        In such cases, computational techniques, such as numerical methods or simulations, are employed
+                        to find approximate solutions.
+                        For example, in linear regression analysis, computational approaches may be used to optimize
+                        model parameters when an analytical solution is not feasible.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Parametric and Non-Parametric Algorithms</h3>
+                    <p class="intro-paragaph">
+                        <!-- https://www.geeksforgeeks.org/difference-between-parametric-and-non-parametric-methods/ -->
+                        <b>Parametric Methods</b><br>
+                        Parametric methods are statistical techniques that rely on specific assumptions about the
+                        underlying distribution of the population being studied.
+                        These methods typically assume that the data follows a known Probability distribution, such as
+                        the normal distribution, and estimate the parameters of this distribution using the available
+                        data.
+                        The basic idea behind the Parametric method is that there is a set of fixed parameters that are
+                        used to determine a probability model that is used in ML as well.
+                        Parametric methods are those methods for which we priory know that the population is normal, or
+                        if not then we can easily approximate it using a Normal Distribution.
+                    </p>
+
+                    <p class="intro-paragaph">
+                        <b>Nonparametric methods</b><br>
+                        Nonparametric methods are statistical techniques that do not rely on specific assumptions about
+                        the underlying distribution of the population being studied, often referred to as
+                        "distribution-free" methods. Nonparametric methods does not make assumptions. This flexibility
+                        allows nonparametric techniques to be used in a wide range of situations, particularly when
+                        there is little knowledge about the population's distribution.
+                        These methods are becoming increasingly popular due to several advantages. <br>
+                        Firstly, they require fewer assumptions about the population, making them more robust in cases
+                        where the underlying distribution is unknown or difficult to define. <br>
+                        Secondly, they are often easier to apply and understand, as many nonparametric techniques are
+                        simpler and less computationally intensive than their parametric counterparts.
+                        <br>However, nonparametric methods still require some assumptions. The data points must be
+                        independent, meaning one observation should not influence another. Additionally, the data should
+                        be randomly sampled from the population and measurements must be consistent across all data
+                        points. Despite these requirements, nonparametric methods are versatile and powerful tools in
+                        statistical analysis.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- https://hshan0103.medium.com/what-is-supervised-semi-supervised-and-unsupervised-learning-12cd8160f99a -->
+                    <h3>Different types of learning</h3>
+                    <div class="d-flex justify-content-center align-items-center"></div>
+                    <!-- https://hshan0103.medium.com/what-is-supervised-semi-supervised-and-unsupervised-learning-12cd8160f99a -->
+                    <img src="../../Assets/ut2_images/different_types_of_learning.png" class="img-fluid"
+                        style="width: 70%;">
+                    <br>
+                    <br>
+                </div>
+                <p class="intro-paragaph">
+                    <b>Supervised Learning</b><br>
+                    Supervised learning involves using labeled datasets, where input variables (predictors) are mapped
+                    to output variables (targets).
+                    The goal is to find a function that accurately predicts the target based on the input. By comparing
+                    predictions with actual labels, the model can be adjusted to reduce errors.
+                    Supervised learning is divided into two categories: regression, for continuous or real-valued
+                    outputs, and classification, for categorical outputs. Appropriate algorithms are applied depending
+                    on the problem type.
+                    The ultimate goal is to create a model that generalizes well to new, unseen data, avoiding issues
+                    like overfitting.
+                </p>
+
+                <p class="intro-paragaph">
+                    <b>Semi-Supervised Learning</b><br>
+                    Unsupervised learning deals with unlabeled data, meaning there are no known outputs to guide the
+                    learning process.
+                    The challenge lies in determining when to stop learning and how to evaluate the model, as no
+                    predictions are made.
+                    Instead, unsupervised learning uncovers hidden patterns and structures in the data. Key areas of
+                    application include clustering, dimensionality reduction, and association analysis. Clustering
+                    groups similar data points, while association analysis discovers hidden relationships.
+                    Dimensionality reduction simplifies datasets with many variables, preserving key information for
+                    more efficient training and analysis.
+                    Unsupervised learning is essential for exploring and understanding data without predefined labels.
+                </p>
+
+                <p class="intro-paragaph">
+                    <b>Unsupervised Learning</b><br>
+                    Semi-supervised learning falls between supervised and unsupervised learning, using a mix of labeled
+                    and
+                    mostly unlabeled data.
+                    Since labeling large datasets is costly and time-consuming, semi-supervised learning is useful in
+                    real-world applications where labeled data is scarce.
+                    The process typically starts with unsupervised learning to group data into clusters, followed by
+                    supervised learning to predict the missing labels.
+                    It is assumed that data points within the same cluster share similar labels, which can be assigned
+                    through methods like voting or averaging.
+                    This approach leverages both labeled and unlabeled data to improve learning efficiency and accuracy.
+                </p>
+
+                <p class="intro-paragaph">
+                    <b>Conclusion</b><br>
+                    Supervised learning is a problem with labeled data, expecting to develop predictive capability.
+                    Unsupervised learning is discovering process, diving into unlabeled data to capture hidden
+                    information.
+                    Semi-supervised learning is a blend of supervised and unsupervised learning.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <!-- https://www.geeksforgeeks.org/ml-bias-variance-trade-off/ -->
+                <h3>Bias-Variance Trade Off</h3>
+                <p class="intro-paragaph col-md-8">
+                    <b>What is Bias?</b><br>
+                    The bias is known as the difference between the prediction of the values by the ML model and the
+                    correct value.
+                    Being high in biasing gives a large error in training as well as testing data. It recommended
+                    that an algorithm should always be low-biased to avoid the problem of underfitting.
+                    By high bias, the data predicted is in a straight line format, thus not fitting accurately in
+                    the data in the data set. Such fitting is known as the Underfitting of Data.
+                    This happens when the hypothesis is too simple or linear in nature.
+                    Refer to the graph given below for an example of such a situation.
+                </p>
+
+                <div class="d-flex justify-content-center align-items-center col-md-4">
+                    <img src="../../Assets/ut2_images/high_bias.png" class="img-fluid" style="width: 70%;">
+                    <br>
+                    <br>
+                </div>
+                <hr>
+                <p class="intro-paragaph col-md-8">
+                    <b>What is Variance?</b><br>
+                    Variance refers to the variability in a model's predictions for a given data point, indicating
+                    how much the model's predictions fluctuate across different training sets.
+                    A model with high variance is overly complex, fitting the training data too closely, which leads
+                    to poor performance on new, unseen data—a phenomenon known as overfitting.
+                    While it may perform well on the training set, such a model struggles to generalize, resulting
+                    in high error rates on test data. Overfitting occurs when the model fits a complex curve to the
+                    training data, capturing noise rather than the underlying pattern.
+                    To build a good model, variance should be minimized.
+                </p>
+
+                <div class="d-flex justify-content-center align-items-center col-md-4">
+                    <img src="../../Assets/ut2_images/high_variance.png" class="img-fluid" style="width: 70%;">
+                    <br>
+                    <br>
+                </div>
+                <hr>
+
+                <p class="intro-paragaph col-md-8">
+                    <b>Tradeoff</b><br>
+                    If the algorithm is too simple (hypothesis with linear equation) then it may be on high bias and
+                    low variance condition and thus is error-prone.
+                    If algorithms fit too complex (hypothesis with high degree equation) then it may be on high
+                    variance and low bias.
+                    In the latter condition, the new entries will not perform well. Well, there is something between
+                    both of these conditions, known as a Trade-off or Bias Variance Trade-off.
+                    This tradeoff in complexity is why there is a tradeoff between bias and variance. An algorithm
+                    can’t be more complex and less complex at the same time.
+                    For the graph, the perfect tradeoff will be like this.
+                </p>
+
+                <div class="d-flex justify-content-center align-items-center col-md-4">
+                    <img src="../../Assets/ut2_images/bias_variance_tradeoff.png" class="img-fluid" style="width: 70%;">
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- https://www.geeksforgeeks.org/underfitting-and-overfitting-in-machine-learning/ -->
+                    <h3>Underfitting and Overfitting</h3>
+                    <p class="intro-paragaph">
+                        <b>Underfitting</b><br>
+                        Underfitting in Machine Learning occurs when a model is too simple to capture the underlying
+                        patterns in the data, leading to poor performance on both the training and testing datasets. An
+                        underfit model fails to learn from the data effectively, resulting in inaccurate predictions,
+                        especially for new, unseen data. This often happens when the model uses overly simplified
+                        assumptions or lacks complexity. To overcome underfitting, more complex models, better feature
+                        representation, and reduced regularization are needed. Underfitting is characterized by high
+                        bias and low variance, meaning the model fails to capture the data's intricacies and generalizes
+                        poorly.
+                        <br>Reasons for Underfitting:
+                    <ul>
+                        <li>The model is too simple for the data's complexity.</li>
+                        <li>A small training dataset.</li>
+                        <li>Excessive regularization that overly constrains the model.</li>
+                        <li>Lack of feature scaling.</li>
+                    </ul>
+                    </p>
+
+                    <p class="intro-paragaph">
+                        <b>Overfitting </b><br>
+                        Overfitting occurs when a model is overly complex and performs exceptionally well on training
+                        data but fails to generalize to new, unseen data, resulting in poor predictions on the test set.
+                        This happens when the model learns not only the patterns but also the noise and inaccuracies in
+                        the training data, leading to high variance.
+                        Overfitting is common with non-parametric and non-linear methods, as they have more flexibility
+                        to fit the data, potentially creating unrealistic models.
+                        To avoid overfitting, one can use simpler models, such as linear algorithms for linear data, or
+                        tune parameters like the maximal depth in decision trees.
+                        <br>Reasons for Overfitting:
+                    <ul>
+                        <li>High variance and low bias.</li>
+                        <li>Excessive model complexity.</li>
+                        <li>Insufficient training data.</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container mt-2 mb-3">
+            <h3 class="text-center">Take-home exercises</h3>
+            <hr>
+            <ul class="course-outline">
+                <li><a href="pds/ut2_pd1.html">PD #1</a></li>
+                <li><a href="pds/ut2_pd2.html">PD #2</a></li>
+                <li><a href="pds/ut2_pd3.html">PD #3</a></li>
+                <li><a href="pds/ut2_pd4.html">PD #4</a></li>
+            </ul>
+        </div>
+
+
+        <div class="container mt-5 mb-3">
+            <h3 class="text-center">Web bibliography</h3>
+            <hr>
+            <p>
+                - https://www.ibm.com/topics/machine-learning <br>
+                - https://marufsazed.medium.com/the-difference-between-mathematical-computational-and-applied-statistics-f4afaf76b76d <br>
+                - https://www.geeksforgeeks.org/difference-between-parametric-and-non-parametric-methods/ <br>
+                - https://hshan0103.medium.com/what-is-supervised-semi-supervised-and-unsupervised-learning-12cd8160f99a <br>
+                - https://www.geeksforgeeks.org/ml-bias-variance-trade-off/ <br>
+                - https://www.geeksforgeeks.org/underfitting-and-overfitting-in-machine-learning/ <br>
+            </p>
+        </div>
 
         <div class="text-center text-inverse navbar-inverse">
             <div class="container">
-              <div class="row">
-                <div class="footer-col col-md-4" id="contact">
-                    <h3>Location</h3>
+                <div class="row">
+                    <div class="footer-col col-md-4" id="contact">
+                        <h3>Location</h3>
                         <p>Montevideo, Uruguay</p>
-                </div> <!-- .footer-col -->
-                <div class="footer-col col-md-4">
-                    <h3>Connect</h3>
-                    <ul class="list-inline">
-                      <li>
-                           <a class="medium" href="https://github.com/Ionasjospo" target="newwindow"><span class="fui-github"></span></a>
-                      </li>
-                      <li>
-                          <a class="medium" href="https://www.linkedin.com/in/ionas-josponis/" target="newwindow"><span class="fui-linkedin"></span></a>
-                      </li>
-                    </ul>
-                </div> <!-- .footer-col -->
-                <div class="footer-col col-md-4">
-                    <h3>Hire Me</h3>
-                    <p>I'm available for workshops</p>
-                </div> <!-- .footer-col -->
-              </div> <!-- .row -->
-            </div> <!-- .container --> 
-          </div> <!--  -->
+                    </div> <!-- .footer-col -->
+                    <div class="footer-col col-md-4">
+                        <h3>Connect</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a class="medium" href="https://github.com/Ionasjospo" target="newwindow"><span
+                                        class="fui-github"></span></a>
+                            </li>
+                            <li>
+                                <a class="medium" href="https://www.linkedin.com/in/ionas-josponis/"
+                                    target="newwindow"><span class="fui-linkedin"></span></a>
+                            </li>
+                        </ul>
+                    </div> <!-- .footer-col -->
+                    <div class="footer-col col-md-4">
+                        <h3>Hire Me</h3>
+                        <p>I'm available for workshops</p>
+                    </div> <!-- .footer-col -->
+                </div> <!-- .row -->
+            </div> <!-- .container -->
+        </div> <!--  -->
         </div>
 
     </main>
+
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
