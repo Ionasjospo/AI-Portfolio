@@ -1,3 +1,9 @@
+UT1
+- https://www.datascience-pm.com/crisp-dm-2/
+- https://www.linkedin.com/pulse/exploring-crisp-dm-significance-phases-considerations-data-driven-qyioc/
+- https://ieee-dataport.org/documents/uci-datasets#:~:text=The%20UCI%20dataset%20is%20a,learning%20and%20data%20mining%20research.
+-https://www.analyticsvidhya.com/blog/2021/10/intro-to-rapidminer-a-no-code-development-platform-for-data-mining-with-case-study/
+
 
 UT2
 - https://www.ibm.com/topics/machine-learning

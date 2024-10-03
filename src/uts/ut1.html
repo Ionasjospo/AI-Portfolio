@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT01 - Introduction to Machine Learning</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top transparent">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="../index.html">Ionas Josponis</a>
+            </div> <!-- .navbar-header -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div> <!-- .navbar-collapse -->
+        </div> <!-- .container -->
+    </nav>
+    <br>
+    <br>
+    <main data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-center">Introduction to Machine Learning</h3>
+                    <hr>
+                    <p class="intro-paragraph">
+                        In Unit 1, we cover essential techniques and tools in high demand in the industry, focusing on
+                        the Data Science and Machine Learning process.
+                        We explore the CRISP-DM methodology for development, which guides the workflow from
+                        understanding data to deploying models.
+                        Different types of algorithms and their applications are introduced, along with the importance
+                        of building machine learning portfolios.
+                        The unit also addresses desirable characteristics of datasets used for training ML models and
+                        types of problems they can solve, such as those from the UCI repository.
+                        We review modern tools like Weka and RapidMiner, and cover basic statistical concepts and
+                        spreadsheet usage for data handling.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 algorithm-box">
+                    <h3>CRISP-DM</h3>
+                    <p class="intro-paragraph">
+                        <!-- https://www.datascience-pm.com/crisp-dm-2/ -->
+                        <b>What is CRISP-DM?</b><br>
+                        Cross-Industry Standard Process for Data Mining is a widely used methodology for data mining and
+                        data science projects, developed in 1999. It consists of six key phases: <br>
+
+                        <b>1. Business Understanding:</b> Define project goals from a business perspective, assess
+                        resources, and set both business and data mining objectives.
+                        <b>2. Data Understanding:</b> Identify and explore data, verify its quality, and document its
+                        properties. <br>
+                        <b>3. Data Preparation:</b> Clean and format the data, select relevant features, and integrate
+                        datasets for modeling. <br>
+                        <b>4. Modeling:</b> Select and apply algorithms, build models, and assess their performance.
+                        <br>
+                        <b>5. Evaluation:</b> Ensure the models align with business goals and evaluate the process
+                        before deciding next steps. <br>
+                        <b>6. Deployment:</b> Implement the model, create reports, and plan for long-term monitoring and
+                        maintenance. <br>
+
+                        CRISP-DM is adaptable and can be combined with agile project management for optimal results.
+                    </p>
+
+                    <div class="d-flex justify-content-center align-items-center">
+                        <!-- https://www.linkedin.com/pulse/exploring-crisp-dm-significance-phases-considerations-data-driven-qyioc/ -->
+                        <img src="../../Assets/ut1_images/crisp-dm.png" class="img-fluid" style="width: 100%;">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 algorithm-box">
+                    <h3> UCI Machine Learning Repository</h3>
+                    <p class="intro-paragraph">
+                        <!-- https://ieee-dataport.org/documents/uci-datasets#:~:text=The%20UCI%20dataset%20is%20a,learning%20and%20data%20mining%20research. -->
+                        <b>What is UCI?</b><br>
+                        The UCI dataset is a data repository maintained and made available by the University of California, 
+                        Irvine that is widely used for machine learning and data mining research. You can browse datasets at <a href="https://archive.ics.uci.edu/datasets" rel="noopener" target="_blank"><span>UCI archive.</span></a> 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 algorithm-box">
+                    <h3>RapidMiner tool</h3>
+                    <p class="intro-paragraph">
+                        <!-- https://www.analyticsvidhya.com/blog/2021/10/intro-to-rapidminer-a-no-code-development-platform-for-data-mining-with-case-study/ -->
+                        <b>What is RapidMiner?</b><br>
+                        Rapidminer is a comprehensive data science platform with visual workflow design and full automation. 
+                        It means that we don’t have to do the coding for data mining tasks. 
+                        Rapidminer is one of the most popular data science tools.
+                        This is the graphical user interface of the blank process in rapidminer. It has the repository that holds our dataset.
+                        We can import our own datasets. It also offers many public datasets that we can try. We can also work with a database connection.
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="../../Assets/ut1_images/rapidminer-gui.png" class="img-fluid" style="width: 100%; height: auto;">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-2 mb-3">
+            <h3 class="text-center">Take-home exercises</h3>
+            <hr>
+            <ul class="course-outline">
+                <li><a href="ut4_pds">UT1_PD1</a></li>
+                <li><a href="ut4_pd">UT1_PD2</a></li>
+            </ul>
+        </div>
+
+
+        <div class="container mt-5 mb-3">
+            <h3 class="text-center">Web bibliography</h3>
+            <hr>
+            <p>
+                - https://www.datascience-pm.com/crisp-dm-2/ <br>
+                - https://www.linkedin.com/pulse/exploring-crisp-dm-significance-phases-considerations-data-driven-qyioc/ <br>
+                - https://ieee-dataport.org/documents/uci-datasets#:~:text=The%20UCI%20dataset%20is%20a,learning%20and%20data%20mining%20research. <br>
+                -https://www.analyticsvidhya.com/blog/2021/10/intro-to-rapidminer-a-no-code-development-platform-for-data-mining-with-case-study/
+            </p>
+        </div>
+
+        <div class="text-center text-inverse navbar-inverse">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4" id="contact">
+                        <h3>Location</h3>
+                        <p>Montevideo, Uruguay</p>
+                    </div> <!-- .footer-col -->
+                    <div class="footer-col col-md-4">
+                        <h3>Connect</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a class="medium" href="https://github.com/Ionasjospo" target="newwindow"><span
+                                        class="fui-github"></span></a>
+                            </li>
+                            <li>
+                                <a class="medium" href="https://www.linkedin.com/in/ionas-josponis/"
+                                    target="newwindow"><span class="fui-linkedin"></span></a>
+                            </li>
+                        </ul>
+                    </div> <!-- .footer-col -->
+                    <div class="footer-col col-md-4">
+                        <h3>Hire Me</h3>
+                        <p>I'm available for workshops</p>
+                    </div> <!-- .footer-col -->
+                </div> <!-- .row -->
+            </div> <!-- .container -->
+        </div> <!--  -->
+        </div>
+    </main>
+</body>
+
+</html>
+
+
+
+
+<!-- https://codepen.io/eddyerburgh/pen/oxwXjx -->
