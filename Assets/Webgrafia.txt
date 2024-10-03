@@ -1,0 +1,27 @@
+
+UT2
+- https://www.ibm.com/topics/machine-learning
+- https://marufsazed.medium.com/the-difference-between-mathematical-computational-and-applied-statistics-f4afaf76b76d
+- https://www.geeksforgeeks.org/difference-between-parametric-and-non-parametric-methods/
+- https://hshan0103.medium.com/what-is-supervised-semi-supervised-and-unsupervised-learning-12cd8160f99a
+- https://www.geeksforgeeks.org/ml-bias-variance-trade-off/
+- https://www.geeksforgeeks.org/underfitting-and-overfitting-in-machine-learning/
+- https://codepen.io/eddyerburgh/pen/oxwXjx
+
+
+UT3
+- https://www.geeksforgeeks.org/gradient-descent-in-linear-regression/
+- https://poissonisfish.com/2023/04/11/gradient-descent/
+- https://www.geeksforgeeks.org/ml-linear-regression/
+- https://www.linkedin.com/pulse/understanding-linear-regression-basics-divyesh-sonar-snv4c
+- https://www.sciencedirect.com/topics/computer-science/sigmoid-function
+- https://www.codecademy.com/resources/docs/ai/neural-networks/sigmoid-activation-function
+- https://www.geeksforgeeks.org/understanding-logistic-regression/
+- https://www.freecodecamp.org/news/linear-regression-vs-logistic-regression/
+- https://codepen.io/eddyerburgh/pen/oxwXjx
+
+
+UT4
+- https://www.geeksforgeeks.org/naive-bayes-classifiers/
+- https://www.geeksforgeeks.org/k-nearest-neighbours/
+- https://www.geeksforgeeks.org/feature-selection-techniques-in-machine-learning/

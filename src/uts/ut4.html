@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT04 - Non Linear Algorithms</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top transparent">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="../index.html">Ionas Josponis</a>
+            </div> <!-- .navbar-header -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div> <!-- .navbar-collapse -->
+        </div> <!-- .container -->
+    </nav>
+    <br>
+    <br>
+    <main data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-center">Non Linear Algorithms</h3>
+                <hr>
+                <p class="intro-paragraph">
+                    In Unit 4, we explore two fundamental machine learning algorithms: Naive Bayes and k-Nearest Neighbors (k-NN). 
+                    For Naive Bayes, we cover data preparation, model representation, and learning from data to make predictions based on the probabilistic approach. 
+                    With k-NN, the focus is on how to represent data, learn from it, and use the model for classification and regression tasks. 
+                    Data preprocessing and feature selection techniques are crucial for k-NN, ensuring the model's accuracy and efficiency. 
+                    Additionally, we study feature selection, which enhances model performance by choosing the most relevant attributes.
+                </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 algorithm-box">
+                    <h3>Naive Bayes</h3>
+                    <p class="intro-paragraph">
+                        <!-- https://www.geeksforgeeks.org/naive-bayes-classifiers/ -->
+                        <b>What is Naive Bayes?</b><br>
+                        Naive Bayes classifiers are a family of classification algorithms based on <a href="https://www.geeksforgeeks.org/bayes-theorem/" rel="noopener" target="_blank"><span>Bayes’ Theorem</span></a>, 
+                        assuming that each feature in a dataset is independent of the others—a condition rarely met in reality but simplifying the model. 
+                        Despite this "naive" assumption, Naive Bayes is highly effective, especially for tasks with high-dimensional data like text classification. 
+                        It is widely used for applications such as spam filtering, sentiment analysis, and rating classification due to its speed and ease of prediction. 
+                        As a probabilistic classifier, it predicts the probability that an instance belongs to a particular class based on the given feature values.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 algorithm-box">
+                    <h3>k-Nearest Neighbors</h3>
+                    <p class="intro-paragraph col-xs-8">
+                        <!-- https://www.geeksforgeeks.org/k-nearest-neighbours/ -->
+                        <b>What is the K-Nearest Neighbors Algorithm?</b><br>
+
+                        The K-Nearest Neighbors (KNN) algorithm is a fundamental and widely used supervised learning algorithm in machine learning, known for its simplicity and effectiveness. 
+                        KNN is non-parametric, meaning it makes no assumptions about the data's distribution. 
+                        It is often applied in classification and regression tasks, such as pattern recognition, data mining, and intrusion detection. 
+                        The algorithm works by identifying the K closest data points (neighbors) to a given point using a distance metric, typically Euclidean distance. 
+                        The class or value of the new point is determined by the majority vote or average of its neighbors. 
+                        KNN's flexibility allows it to handle both numerical and categorical data while adapting to local patterns.
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center col-xs-4">
+                        <!-- https://poissonisfish.com/2023/04/11/gradient-descent/ -->
+                        <img src="../../Assets/ut4_images/knn_algorithm.png" class="img-fluid" style="width: 100%;">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 algorithm-box">
+                    <h3>Feature selection</h3>
+                    <p class="intro-paragraph">
+                        <!-- https://www.geeksforgeeks.org/feature-selection-techniques-in-machine-learning/ -->
+                        <b>What is Feature selection?</b><br>
+                        Feature selection is the process of selecting a subset of relevant features from the original set to reduce the feature space while maintaining optimal performance based on a specific criterion. 
+                        It is a critical step in machine learning, particularly in text categorization, where some features (such as rarely occurring words) may not provide meaningful information. 
+                        For instance, if a word like "groovy" appears only once in a positive document, it's uncertain whether it's genuinely related to the positive class or simply noise. 
+                        Removing such features can help simplify the model and improve its ability to generalize.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-2 mb-3">
+            <h3 class="text-center">Take-home exercises</h3>
+            <hr>
+            <ul class="course-outline">
+                <li><a href="ut4_pds">UT4_TA #5</a></li>
+                <li><a href="ut4_pd">UT4_TA #10</a></li>
+            </ul>
+        </div>
+
+
+        <div class="container mt-5 mb-3">
+            <h3 class="text-center">Web bibliography</h3>
+            <hr>
+            <p>
+                - https://www.geeksforgeeks.org/naive-bayes-classifiers/ <br>
+                - https://www.geeksforgeeks.org/k-nearest-neighbours/ <br>
+                - https://www.geeksforgeeks.org/feature-selection-techniques-in-machine-learning/
+            </p>
+        </div>
+
+        <div class="text-center text-inverse navbar-inverse">
+            <div class="container">
+              <div class="row">
+                <div class="footer-col col-md-4" id="contact">
+                    <h3>Location</h3>
+                        <p>Montevideo, Uruguay</p>
+                </div> <!-- .footer-col -->
+                <div class="footer-col col-md-4">
+                    <h3>Connect</h3>
+                    <ul class="list-inline">
+                      <li>
+                           <a class="medium" href="https://github.com/Ionasjospo" target="newwindow"><span class="fui-github"></span></a>
+                      </li>
+                      <li>
+                          <a class="medium" href="https://www.linkedin.com/in/ionas-josponis/" target="newwindow"><span class="fui-linkedin"></span></a>
+                      </li>
+                    </ul>
+                </div> <!-- .footer-col -->
+                <div class="footer-col col-md-4">
+                    <h3>Hire Me</h3>
+                    <p>I'm available for workshops</p>
+                </div> <!-- .footer-col -->
+              </div> <!-- .row -->
+            </div> <!-- .container --> 
+          </div> <!--  -->
+        </div>
+    </main>
+</body>
+
+</html>
+
+
+
+
+<!-- https://codepen.io/eddyerburgh/pen/oxwXjx -->
