@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT4_TA5</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top transparent">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Ionas Josponis</a>
+            </div> <!-- .navbar-header -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div> <!-- .navbar-collapse -->
+        </div> <!-- .container -->
+    </nav>
+    
+    <main data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="intro-paragraph">
+                        <h4>UT4_TA5</h4>
+                        <p><strong>Dataset: "Golf" and "Golf-TestSet"</strong><br>
+                            In this task, I worked with two datasets, <em>"Golf"</em> and <em>"Golf-TestSet"</em>. Both datasets contained numerical variables like "Humidity" and "Temperature". Here's how I processed them and tested the model using Naive Bayes:
+                        </p>
+                        
+                        <p><strong>Discretization:</strong><br>
+                            I used the "Numerical to Polynomial" operator to transform numerical variables into categorical ones. This helps improve the model's accuracy.<br>
+
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="../../../Assets/ut4_images/ut4_ta5_v1.png" class="img-fluid" style="width: 60%;">
+                            </div>
+                            After generating, training, and testing the Naive Bayes model, the following results were obtained:
+                        </p>
+
+                        <ul>
+                            <li><strong>ApplyModel:</strong> Showed the model's predictions along with confidence levels for each prediction, as well as the meteorological conditions for each example. The confidence values indicate how "sure" the model was in its predictions, helping in interpreting its performance.</li>
+                            <div class="d-flex justify-content-start align-items-start">
+                                <img src="../../../Assets/ut4_images/ut4_ta5_v1_apply_model.png" class="img-fluid" style="width: 60%;">
+                            </div>
+                            <li><strong>PerformanceVector:</strong> Summarized the model's accuracy. The model achieved a general accuracy of 71.43%, meaning 71.43% of the predictions matched the actual outcomes.</li>
+                            <div class="d-flex justify-content-start align-items-start">
+                                <img src="../../../Assets/ut4_images/ut4_ta5_v1_performance_vector.png" class="img-fluid">
+                            </div>
+                            <li><strong>SimpleDistribution (Naive Bayes):</strong> Displayed the probability of classes for the "Play" label. The class "no" had a probability of 0.357, while "yes" had a probability of 0.643. Four distributions were associated with each class, reflecting how the model categorized data.</li>
+                            <div class="d-flex justify-content-start align-items-start">
+                                <img src="../../../Assets/ut4_images/ut4_ta5_v1_simple_distribution.png" class="img-fluid" style="width: 40%;">
+                            </div>
+                        </ul>
+
+                        <p><strong>Without Discretization:</strong><br>
+                            To compare, I ran the model without using the "Numerical to Polynomial" operator. This allowed a direct comparison between the discretized and non-discretized processes. 
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="../../../Assets/ut4_images/ut4_ta5_v2.png" class="img-fluid" style="width: 60%;">
+                            </div>
+                            The results were as follows:
+                        </p>
+
+                        <p><strong>Results:</strong><br>
+                            Without discretization, the accuracy dropped from 71% to 64%, showing that discretization improved the performance of the Naive Bayes model.
+                            <div class="d-flex justify-content-start align-items-sjustify-content-start">
+                                <img src="../../../Assets/ut4_images/ut4_ta5_v2_performance_vector.png" class="img-fluid">
+                            </div>
+                        </p>
+
+                        <p><strong>Conclusion:</strong><br>
+                            Comparing the confusion matrices from the discretized and non-discretized versions, we can observe key differences in overall accuracy:
+                        </p>
+                        <ul>
+                            <li>With discretization: <strong>71.43%</strong></li>
+                            <li>Without discretization: <strong>64.29%</strong></li>
+                        </ul>
+                        <p>Discretization improved the model’s precision by approximately 7%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center text-inverse navbar-inverse">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4" id="contact">
+                        <h3>Location</h3>
+                        <p>Montevideo, Uruguay</p>
+                    </div> <!-- .footer-col -->
+                    <div class="footer-col col-md-4">
+                        <h3>Connect</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a class="medium" href="https://github.com/Ionasjospo" target="newwindow"><span class="fui-github"></span></a>
+                            </li>
+                            <li>
+                                <a class="medium" href="https://www.linkedin.com/in/ionas-josponis/" target="newwindow"><span class="fui-linkedin"></span></a>
+                            </li>
+                        </ul>
+                    </div> <!-- .footer-col -->
+                    <div class="footer-col col-md-4">
+                        <h3>Hire Me</h3>
+                        <p>I'm available for workshops</p>
+                    </div> <!-- .footer-col -->
+                </div> <!-- .row -->
+            </div> <!-- .container -->
+        </div> <!-- footer -->
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HoRfnjQe6LRgsZAWB7tF0/J9UvcrHJ/tDvkfjTcZ4IM3wb/SuRoGJb7nVLv9ej3M" crossorigin="anonymous"></script>
+</body>
+</html>

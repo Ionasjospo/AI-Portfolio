@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT4_TA10</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top transparent">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Ionas Josponis</a>
+            </div> <!-- .navbar-header -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div> <!-- .navbar-collapse -->
+        </div> <!-- .container -->
+    </nav>
+    
+    <main data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="intro-paragraph">
+                        <h4>UT4_TA10</h4>
+                        <p><strong>Dataset: Sonar</strong><br>
+                            In this task, we focused on the Sonar dataset. We started by visualizing the data using a Parallel Plot, which helped us identify areas where classes were more differentiated, notably between attributes 35 to 45.
+                        </p>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="../../../Assets/ut4_images/ut4_ta10_parallel_plot.png" class="img-fluid" style="width: 60%;">
+                        </div>
+                        <p class="text-center">
+                            We then switched the visualization to a Deviation Plot to further explore these differences.
+                        </p>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="../../../Assets/ut4_images/ut4_ta10_desviation_plot.png" class="img-fluid" style="width: 60%;">
+                        </div>
+                        <h5>Exercise 1</h5>
+                        <p><strong>Modeling with Naive Bayes:</strong><br>
+                            We used Naive Bayes for benchmarking and applied the same cross-validation techniques. Here are the summarized results:
+                        </p>
+                        <div class="d-flex justify-content-start align-items-stajustify-content-start mb-4">
+                            <img src="../../../Assets/ut4_images/ut4_ta10.png" class="img-fluid" style="width: 60%;">
+                        </div>
+                        <div class="d-flex justify-content-start align-items-stajustify-content-start">
+                            <img src="../../../Assets/ut4_images/ut4_ta10_inside_cross_validation.png" class="img-fluid" style="width: 60%;">
+                        </div>
+                        <ul class="mt-3">
+                            <li><strong>PerformanceVector:</strong> Showed a general accuracy of 66.90%, indicating that 66.90% of the predictions matched the actual outcomes.</li>
+                            <div class="d-flex justify-content-start align-items-stajustify-content-start">
+                                <img src="../../../Assets/ut4_images/ut4_ta10_ej1_performance_vector.png" class="img-fluid" style="width: 60%;">
+                            </div>
+                            <li><strong>SimpleDistribution (Naive Bayes):</strong> Showed the probabilities for the "Rock" and "Mine" classes with probabilities of 0.466 and 0.534 respectively, across 60 distributions.</li>
+                            <div class="d-flex justify-content-start align-items-stajustify-content-start">
+                                <img src="../../../Assets/ut4_images/ut4_ta10_ej1_simple_distribution.png" class="img-fluid" style="width: 30%;">
+                            </div>
+                        </ul>
+                        <h5>Exercise 2 and 3: Feature Selection</h5>
+                        <p>Using the "Multiply" operator, we applied "Forward Selection" in Exercise 2 and "Backward Elimination" in Exercise 3, each within a cross-validation block:
+                        </p>
+                        <div class="d-flex justify-content-start align-items-stajustify-content-start">
+                            <img src="../../../Assets/ut4_images/ut4_ta10_ej2y3.png" class="img-fluid" style="width: 60%;">
+                        </div>
+                        <p class="mt-4"><strong>Results of Exercise 2:</strong><br>
+                            Forward Selection improved the model's accuracy from 66.90% to 77.43%, highlighting the impact of selecting more influential attributes.
+                        </p>
+                        <div class="d-flex justify-content-start align-items-stajustify-content-start">
+                            <img src="../../../Assets/ut4_images/ut4_ta10_ej2_performance_vector_forward_selection.png" class="img-fluid" style="width: 90%;">
+                        </div>
+                        <p><strong>Results of Exercise 3:</strong><br>
+                            Backward Elimination resulted in a slightly reduced accuracy of 73.12%, with detailed performance differences between the classes.
+                        </p>
+                        <div class="d-flex justify-content-start align-items-stajustify-content-start">
+                            <img src="../../../Assets/ut4_images/ut4_ta10_ej2_performance_vector_backward_elimination.png" class="img-fluid" style="width: 90%;">
+                        </div>
+                        <p>
+                            Comparison with previous exercises:  
+                            In terms of overall accuracy, Backward Elimination resulted in slightly lower performance compared to Forward Selection (73.12% vs. 77.43%).  
+                            The number of correctly predicted instances for the Rock class increased (82 compared to 67 in Forward Selection), but there was a decrease in correct predictions for the Mine class (70 compared to 94).  
+                        </p>
+
+                        <p><strong>Results of Exercise 3:</strong><br>
+                            Backward Elimination resulted in a slightly reduced accuracy of 73.12%, with detailed performance differences between the classes.
+                        </p>
+
+                        <h5>Exercise 4: Optimize Selection</h5>
+                        <p>Using the "Optimize Selection" algorithm, the model's accuracy improved significantly to 81.29%, selecting an optimal set of 9 attributes, which demonstrated an effective balance between simplicity and performance.
+                        </p>
+                        <div class="d-flex justify-content-start align-items-stajustify-content-start">
+                            <img src="../../../Assets/ut4_images/ut4_ta10_ej4_performance_vector_optimize_selection.png" class="img-fluid" style="width: 90%;">
+                        </div>
+                        <p><strong>Conclusion:</strong><br>
+                            The experiments illustrate the effectiveness of different feature selection techniques. Forward Selection streamlined the model by focusing on the most relevant features(4 attributes), while Backward Elimination retained more attributes(52) but did not significantly enhance performance. The "Optimize Selection" algorithm provided the best balance(9 attributes selected), resulting in the highest accuracy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center text-inverse navbar-inverse">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4" id="contact">
+                        <h3>Location</h3>
+                        <p>Montevideo, Uruguay</p>
+                    </div> <!-- .footer-col -->
+                    <div class="footer-col col-md-4">
+                        <h3>Connect</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a class="medium" href="https://github.com/Ionasjospo" target="newwindow"><span class="fui-github"></span></a>
+                            </li>
+                            <li>
+                                <a class="medium" href="https://www.linkedin.com/in/ionas-josponis/" target="newwindow"><span class="fui-linkedin"></span></a>
+                            </li>
+                        </ul>
+                    </div> <!-- .footer-col -->
+                    <div class="footer-col col-md-4">
+                        <h3>Hire Me</h3>
+                        <p>I'm available for workshops</p>
+                    </div> <!-- .footer-col -->
+                </div> <!-- .row -->
+            </div> <!-- .container -->
+        </div> <!-- footer -->
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HoRfnjQe6LRgsZAWB7tF0/J9UvcrHJ/tDvkfjTcZ4IM3wb/SuRoGJb7nVLv9ej3M" crossorigin="anonymous"></script>
+</body>
+</html>
