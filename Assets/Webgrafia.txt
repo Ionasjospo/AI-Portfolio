@@ -24,6 +24,7 @@ UT3
 - https://www.codecademy.com/resources/docs/ai/neural-networks/sigmoid-activation-function
 - https://www.geeksforgeeks.org/understanding-logistic-regression/
 - https://www.freecodecamp.org/news/linear-regression-vs-logistic-regression/
+- https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/
 - https://codepen.io/eddyerburgh/pen/oxwXjx
 
 
